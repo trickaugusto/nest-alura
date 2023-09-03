@@ -11,4 +11,12 @@ export class UserRepository {
   async getAll() {
     return this.users;
   }
+
+  async validateUserByEmail(email: string) {
+    const user = this.users.find(
+      user => user.email === email
+    );
+
+    return user !== undefined;
+  }
 }
